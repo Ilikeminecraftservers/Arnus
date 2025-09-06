@@ -1,0 +1,37 @@
+plugins {
+    id 'java'
+}
+
+group = 'de.example.autarnis'
+version = '0.1'
+description = 'AutoArnisGenerator with Height Datapack installer'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21) // Paper 1.21.x benötigt Java 21
+    }
+}
+
+repositories {
+    mavenCentral()
+    maven {
+        name = 'papermc'
+        url = 'https://repo.papermc.io/repository/maven-public/'
+    }
+}
+
+dependencies {
+    compileOnly 'io.papermc.paper:paper-api:1.21.4-R0.1-SNAPSHOT'
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+}
+
+jar {
+    archiveBaseName.set('AutoArnisGenerator')
+    from {
+        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+}
