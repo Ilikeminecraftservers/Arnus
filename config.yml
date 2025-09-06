@@ -1,0 +1,10 @@
+# AutoArnisGenerator Konfiguration
+
+# Absoluter oder relativer Pfad zum Arnis-Binary
+arnis-path: "/usr/local/bin/arnis"
+
+# Radius in Metern um den Spieler, für den Arnis generiert wird
+radius-meters: 500
+
+# Weltname, in die Arnis-Regionen geschrieben werden sollen
+world-name: "world"
