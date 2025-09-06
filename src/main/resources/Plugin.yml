@@ -1,0 +1,6 @@
+name: AutoArnisGenerator
+main: de.example.autarnis.AutoArnisGenerator
+version: 0.1
+api-version: 1.21
+author: you
+description: Automatische Arnis-Generierung bei Chunkwechsel + Height-Datapack Installer
